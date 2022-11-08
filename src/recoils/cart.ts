@@ -12,11 +12,11 @@ export const cartItemSelector = selectorFamily<number | undefined, string>({
     return carts.get(id);
   },
   set: (id: string) => ({ get, set }, newValue) => {
-    console.log(newValue)
+    // console.log(newValue)
     if(typeof newValue === 'number'){
       const newCart = new Map([...get(cartState)]);
       newCart.set(id, newValue);
-      console.log(newCart)
+      console.log(newCart);
       set(cartState, newCart);
     }
   }
